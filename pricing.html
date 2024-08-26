@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/assets/img/fav-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main Title -->
+    <title>NoCode || Pricing Page</title>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="assets/css/aos.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+</head>
+<body class="bg-mainBg">
+    <!-- Header Area Start Here -->
+    <header
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-offset="20"
+    data-aos-once="true"
+    class="relative px-4.5 left-0 right-0 z-[999]">
+        <div class="bg-bgAbstract absolute w-[1274px] md:h-[750px] h-453 right-0 md:-top-[496px] top-0 blur-2xl"></div>
+        <div class="container">
+            <nav x-data="{ open: false }" class="relative header-gradient">
+                <div class="flex justify-between py-7 items-center">
+                    <div>
+                        <a class="flex gap-2 items-center" href="index.html">
+                            <img class=" flex-shrink-0" src="assets/img/logo.svg" alt="logo">
+                        </a>
+                    </div>
+                    <!-- Menu button for mobile -->
+                    <div class="-mr-2 flex items-center xl:hidden">
+                        <button @click="open = !open" class="text-gray-300 hover:text-white focus:outline-none">
+                            <svg class="w-10 h-10 p-2 border border-borderLight bg-cardBg rounded-12px" fill="none" viewBox="0 0 24 24" stroke="white">
+                            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                            <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" fill="white"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Desktop menu -->
+                    <div class="hidden xl:block" x-data="{ open: false }">
+                        <ul class="flex list-none">
+                            <li class="group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" class="inline-flex items-center no-underline text-lg font-inter font-normal text-secondaryColor hover:text-primaryColor transition ease-in-out duration-500 pl-10"
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Product
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="absolute left-9 top-6 w-40 py-2 list-none  bg-mainBg rounded-md hidden z-[999] group-hover:block" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="index.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="about.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a href="faq.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">FAQ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" class="inline-flex items-center no-underline text-lg font-inter font-normal text-secondaryColor hover:text-primaryColor transition ease-in-out duration-500 pl-10"
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Solution
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="absolute left-9 top-6 w-40 py-2 list-none  bg-mainBg rounded-md hidden z-[999] group-hover:block" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Templates</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Gallery</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Release notes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" class="inline-flex items-center no-underline text-lg font-inter font-normal text-secondaryColor hover:text-primaryColor transition ease-in-out duration-500 pl-10"
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Resource
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="absolute left-9 top-6 w-40 py-2 list-none  bg-mainBg rounded-md hidden z-[999] group-hover:block" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Templates</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Gallery</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Release notes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="group flex items-center relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                                <a href="#" class="inline-flex items-center no-underline text-lg font-inter font-normal text-secondaryColor hover:text-primaryColor transition ease-in-out duration-500 pl-10"
+                                    @click.prevent="open = !open" :class="{ 'text-LavenderIndigo': open }">
+                                    Company
+                                    <svg :class="{ 'rotate-180': open }" class="ml-2 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" width="11" height="6" fill="none" viewBox="0 0 11 6">
+                                        <path d="M1.5 1L5.5 5L9.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </a>
+
+                                <!-- Dropdown content  -->
+                                <ul id="dropdown" class="absolute left-9 top-6 w-40 py-2 list-none  bg-mainBg rounded-md hidden z-[999] group-hover:block" :class="{ 'block': open, 'hidden': !open }">
+                                    <!-- Dropdown items -->
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Overview</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Templates</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Gallery</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Release notes</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="pricing.html" class="text-lg font-inter font-normal text-secondaryColor hover:text-bg hover:transition hover:ease-in-out hover:duration-500 pl-10">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="hidden xl:block">
+                        <a href="sign-in.html" class="no-underline font-inter text-lg font-normal text-secondaryColor hover:text-BtnBg hover:underline hover:text-white hover:transition hover:ease-in-out hover:duration-500">Login</a>
+                        <a href="sign-up.html" class="bg-btn border border-[#fff3] rounded-12px inline-block no-underline text-lg leading-7 font-normal font-inter text-secondaryColor px-6 py-3 ml-5 hover:bg-bghead hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Get Started</a>
+                    </div>
+                </div>
+                
+                <div x-show="open"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-2"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    x-transition:leave="transition ease-in duration-500"
+                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                    x-transition:leave-end="opacity-0 transform -translate-y-2"
+                    class="xl:hidden rounded mx-4 mt-5 transition-opacity duration-500 ease-in-out overflow-hidden absolute inset-x-0 top-16 z-[999] backdrop-blur-2xl bg-white">
+                    <div class="px-6 py-6 space-y-1 flex justify-between flex-col">
+                        <div>
+                            <ul class="dropdown flex flex-wrap flex-col md:justify-center justify-start">
+                                <li class="relative group pb-5 lg:px-0 md:px-5">
+                                    <div class="flex justify-between items-center" onclick="toggleDropdown()">
+                                        <a href="#" class="inline-flex pr-2 text-base font-inter font-normal text-mainBg">Product</a>
+                                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                                            <path d="M1.5 1L5.5 5L9.5 1" stroke="#010111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <!-- Dropdown content -->
+                                    <ul class="w-full mt-5 bg-mainBg rounded-md shadow-2xl hidden py-4 group-hover:block overflow-hidden">
+                                        <!-- Dropdown items -->
+                                        <li>
+                                            <a href="index.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="about.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">About</a>
+                                        </li>
+                                        <li>
+                                            <a href="blog.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Blog</a>
+                                        </li>
+                                        <li>
+                                            <a href="faq.html" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">FAQ</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li onclick="toggleDropdown()" class="relative group pb-5 lg:px-0 md:px-5" id="dropdownBtn">
+                                    <div class="flex justify-between items-center">
+                                        <a href="#" class="inline-flex pr-2 text-base font-inter font-normal text-mainBg">Solution</a>
+                                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                                            <path d="M1.5 1L5.5 5L9.5 1" stroke="#010111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <!-- Dropdown content -->
+                                    <ul id="dropdownMenu" class="w-full mt-5 bg-mainBg rounded-md shadow-2xl hidden py-4 group-hover:block overflow-hidden">
+                                        <!-- Dropdown items -->
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Overview</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Templates</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Release notes</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li onclick="toggleDropdown()" class="relative group pb-5 lg:px-0 md:px-5" id="dropdownBtn">
+                                    <div class="flex justify-between items-center">
+                                        <a href="#" class="inline-flex pr-2 text-base font-inter font-normal text-mainBg">Resource</a>
+                                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                                            <path d="M1.5 1L5.5 5L9.5 1" stroke="#010111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <!-- Dropdown content -->
+                                    <ul id="dropdownMenu" class="w-full mt-5 bg-mainBg rounded-md shadow-2xl hidden py-4 group-hover:block overflow-hidden">
+                                        <!-- Dropdown items -->
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Overview</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Templates</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Release notes</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li onclick="toggleDropdown()" class="relative group pb-5 lg:px-0 md:px-5" id="dropdownBtn">
+                                    <div class="flex justify-between items-center">
+                                        <a href="#" class="inline-flex pr-2 text-base font-inter font-normal text-mainBg">Company</a>
+                                        <svg class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="11" height="6" viewBox="0 0 11 6" fill="none">
+                                            <path d="M1.5 1L5.5 5L9.5 1" stroke="#010111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <!-- Dropdown content -->
+                                    <ul id="dropdownMenu" class="w-full mt-5 bg-mainBg rounded-md shadow-2xl hidden py-4 group-hover:block overflow-hidden">
+                                        <!-- Dropdown items -->
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Overview</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Templates</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Gallery</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" onclick="event.preventDefault()" class="text-base font-normal font-inter block px-5 py-3 text-secondaryColor hover:text-gradient hover:transition hover:ease-in-out hover:duration-500">Release notes</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="lg:px-0 md:px-5"><a href="pricing.html" class="text-base font-inter font-normal text-mainBg">Pricing</a></li>
+                            </ul>
+                        </div>
+                        <div class="pt-10 md:block hidden mx-0 md:mx-auto">
+                            <a href="sign-in.html" class="text-base font-normal font-inter text-secondaryColor hover:text-BtnBg hover:underline hover:transition hover:ease-in-out hover:duration-300">Sign In</a>
+                            <a href="sign-up.html" class="text-base font-normal inline-block font-inter text-secondaryColor px-6 py-2 bg-signBg rounded-100 ml-5 hover:bg-spanBg hover:text-secondaryColor hover:scale-105 hover:transition hover:ease-in-out hover:duration-500">Sign Up</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Header Area End Here -->
+
+    <!-- Pricing Banner Start Here -->
+    <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-offset="20"
+    data-aos-once="true"
+    class="relative w-auto h-[1040px] top-0 lg:pt-32 pt-10">
+        <div class="container">
+            <div class="absolute inset-0 bg-bgBanner bg-cover bg-center opacity-80 h-[1040px]"></div>
+            <div class="absolute bg-bgAbstract2 rounded-full lg:w-[870px] w-[90%] h-[870px] md:top-[40%] top-0 md:-left-[216px] blur-2xl"></div>
+            <div class="relative w-auto">
+                <div class="flex lg:flex-row flex-col justify-between items-center">
+                    <div>
+                        <div class="bg-headerBorder w-32 py-2.5 border-gradient-2">
+                            <p class="text-gradient text-center font-inter font-normal text-lg leading-7">About us</p>
+                        </div>
+                        <h1 class="pt-6 text-left font-Graphik text-primaryColor lg:text-9xl text-5.5xl lg:leading-21 leading-15 font-medium md:-tracking-[3px]">
+                            Get started for <span class="inline-block text-gradient py-2.5"> free.</span>Unlimited projects for you 
+                        </h1>
+                    </div>
+                    <div x-data="{ activeTab: 'Monthly' }" class="h-20 md:w-[321px] w-full mx-auto bg-white bg-opacity-10 backdrop-blur-2xl mt-10 rounded-[42px]">
+                        <div class="flex justify-around py-2.5 px-2.5">
+                            <!-- Monthly tab -->
+                            <a href="#" @click.prevent="activeTab = 'Monthly'"
+                                :class="{'bg-bghead rounded-32px': activeTab === 'Monthly'}"
+                               class="py-4 px-11 font-semibold text-lg font-inter leading-8 text-primaryColor">
+                               Monthly
+                            </a>
+                            <!-- Yearly tab -->
+                            <a href="#" @click.prevent="activeTab = 'Yearly'"
+                               :class="{'bg-bghead rounded-32px': activeTab === 'Yearly'}"
+                               class="py-4 px-11 font-semibold text-lg font-inter text-primaryColor leading-8">
+                               Yearly
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-cardBg grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 rounded-12px backdrop-blur-[24px] mt-16 relative z-[999]">
+                    <div class="p-7 border border-transparent hover:border-gradient-5">
+                        <h5 class="font-Graphik font-medium text-lg leading-8 text-primaryColor">Free Plan</h5>
+                        <h2 class="font-Graphik font-medium text-4xl leading-12 text-primaryColor">$0/month</h2>
+                        <hr class="w-full border border-[#fff3] my-7"/>
+                        <ul class="mb-20">
+                            <li class="flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor">
+                                <img src="assets/img/pricing-check.svg" alt="">Drag-and-drop builder
+                            </li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor">
+                                <img src="assets/img/pricing-check.svg" alt="">1 website
+                            </li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor">
+                                <img src="assets/img/pricing-check.svg" alt="">10 pages
+                            </li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor">
+                                <img src="assets/img/pricing-check.svg" alt="">Basic templates
+                            </li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor">
+                                <img src="assets/img/pricing-check.svg" alt="">Community support
+                            </li>
+                        </ul>
+                        <a href="#" onclick="event.preventDefault()" class="relative z-[999] px-11 py-4 rounded-32px bg-white bg-opacity-10 block text-center font-inter font-medium text-lg leading-8 text-primaryColor hover:bg-bghead">Select Plan</a>
+                    </div>
+                    
+                    <div class="p-7 border-gradient-5">
+                        <h5 class="font-Graphik font-medium text-lg leading-8 text-primaryColor">Starter Plan</h5>
+                        <h2 class="font-Graphik font-medium text-4xl leading-12 text-primaryColor">$15/month</h2>
+                        <hr class="w-full border border-[#fff3] my-7"/>
+                        <ul class="mb-10">
+                            <li class="flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">All Free Plan features</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Custom domain</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">5 websites</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">50 pages</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Premium templates</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Email support</li>
+                        </ul>
+                        <a href="#" onclick="event.preventDefault()" class="px-11 py-4 rounded-32px block text-center font-inter font-medium text-lg leading-8 text-primaryColor bg-bghead">Select Plan</a>
+                    </div>
+                    <div class="p-7 border border-transparent hover:border-gradient-5">
+                        <h5 class="font-Graphik font-medium text-lg leading-8 text-primaryColor">Professional Plan</h5>
+                        <h2 class="font-Graphik font-medium text-4xl leading-12 text-primaryColor">$30/month</h2>
+                        <hr class="w-full border border-[#fff3] my-7"/>
+                        <ul class="mb-10">
+                            <li class="flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">All Starter Plan features</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">10 website</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Unlimited pages</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Advanced design tools</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">SEO tools</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Priority support</li>
+                        </ul>
+                        <a href="#" onclick="event.preventDefault()" class="relative z-[999] px-11 py-4 rounded-32px bg-white bg-opacity-10 block text-center font-inter font-medium text-lg leading-8 text-primaryColor hover:bg-bghead">Select Plan</a>
+                    </div>
+                    <div class="p-7 border border-transparent hover:border-gradient-5">
+                        <h5 class="font-Graphik font-medium text-lg leading-8 text-primaryColor">Business Plan</h5>
+                        <h2 class="font-Graphik font-medium text-4xl leading-12 text-primaryColor">Custom</h2>
+                        <hr class="w-full border border-[#fff3] my-7"/>
+                        <ul class="mb-10">
+                            <li class="flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">All Professional Plan features</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">20 website</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">eCommerce features</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Custom integrations</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Advanced analytics</li>
+                            <li class="pt-3.5 flex gap-3 font-inter text-base leading-7 font-normal text-secondaryColor"><img src="assets/img/pricing-check.svg" alt="">Dedicated account manager</li>
+                        </ul>
+                        <a href="#" onclick="event.preventDefault()" class="relative z-[999] px-11 py-4 rounded-32px bg-white bg-opacity-10 block text-center font-inter font-medium text-lg leading-8 text-primaryColor hover:bg-bghead">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- pricing Banner End Here -->
+
+    <!-- Pricing Info Area Start Here -->
+     <section class="xl:mt-52 lg:mt-[26rem] md:mt-[96rem] mt-[99rem]">
+        <div class="container">
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="text-center">
+                <h2 class="font-Graphik font-normal md:text-7xl text-[42px] md:leading-20 leading-14 text-primaryColor">Comparison Table</h2>
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="border border-transparent rounded-32px lg:overflow-hidden overflow-x-scroll md:mt-16 mt-10">
+                <table class="w-full">
+                    <thead class="bg-white bg-opacity-10">
+                        <tr>
+                            <th class="p-7 text-left w-517 font-inter font-semibold md:text-lg text-base leading-8 text-primaryColor">Features</th>
+                            <th class=" font-inter font-semibold md:text-lg text-base leading-8 text-primaryColor">Free Plan</th>
+                            <th class=" font-inter font-semibold md:text-lg text-base leading-8 text-primaryColor">Starter Plan</th>
+                            <th class=" font-inter font-semibold md:text-lg text-base leading-8 text-primaryColor">Professional Plan</th>
+                            <th class=" font-inter font-semibold md:text-lg text-base leading-8 text-primaryColor">Business Plan</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white bg-opacity-15 backdrop-blur-2xl">
+                        <tr>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Price</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">$0/month</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">$15/month</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">$30/month</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">$30/month</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Drag-and-drop builder</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Number of websites</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">1</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">5</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">10</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">20</a></td>
+                        </tr>
+                        <tr>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Number of pages</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">10</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">50</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Unlimited</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Unlimited</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Custom domain</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Templates</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Basic</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Premium</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Premium</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Premium</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Design tools</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Basic</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Basic</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Advanced</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Advanced</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">SEO tools</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">eCommerce features</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Yes</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Integrations</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">No</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Custom</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Analytics</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Basic</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Basic</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Basic</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Advanced</a></td>
+                        </tr>
+                        <tr class="">
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-medium leading-5 md:leading-8 font-inter text-primaryColor text-left px-7 py-2">Support</a></td>
+                            <td class=" py-5"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Community</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Email</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Priority</a></td>
+                            <td class=" py-5 px-2"><a href="#" class="block no-underline md:text-lg text-xs font-normal leading-5 md:leading-8 font-inter text-secondaryColor text-center px-7 py-2 bg-spanColor ">Dedicated Manager</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+     </section>
+    <!-- Pricing Info Area End Here -->
+
+    <!-- Accordion Area Start Here -->
+    <section
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-offset="20"
+    data-aos-once="true"
+    class="xl:mt-60 mt-40">
+        <div class="container">
+            <div class="xl:w-1026 w-auto mx-auto">
+                <div class="bg-headerBorder w-[149px] mx-auto py-2.5 border-gradient-2">
+                    <p class="text-gradient text-center font-inter font-normal text-lg leading-7">Helpful FAQs</p>
+                </div>
+                <h2 class="pt-6 text-center font-Graphik text-primaryColor font-normal lg:text-7xl lg:leading-20 text-[42px] leading-15 -tracking-[2px]">Common Questions and Answer</h2>
+                <p class="pt-4 text-secondaryColor font-inter md:text-lg text-base leading-7 font-normal text-center">Explore our FAQ section to find answers to common queries about our services and platform.</p>
+                <div class="overflow-hidden md:mt-24 mt-16">
+                    <div x-data="{ openTab: 1, faqData: [
+                        {
+                            id: 1,
+                            question: 'How does nocode compare to other website builders',
+                            answer: 'Tools like WordPress, Squarespace, Wix, and Webflow offer website building without HTML or CSS knowledge. They provide pre-designed templates for common needs like blogs and shopping carts. Nocode, however, offers full control over your website\'s functionality and design. You can create custom data categories, trigger actions like email sending or Facebook integration, and define specific logic. For advanced needs, Bubble is the solution beyond standard website builders.'
+                        },
+                        {
+                            id: 2,
+                            question: 'What can I build with nocode',
+                            answer: 'A Sales Overview SaaS (Software as a Service) platform provides tools and analytics to help businesses track, manage, and optimize their sales processes. It offers real-time insights, reporting, and dashboards to improve sales performance and decision-making.'
+                        },
+                        {
+                            id: 3,
+                            question: 'Do nocode apps work on mobile?',
+                            answer: 'A Sales Overview SaaS (Software as a Service) platform provides tools and analytics to help businesses track, manage, and optimize their sales processes. It offers real-time insights, reporting, and dashboards to improve sales performance and decision-making.'
+                        },
+                        {
+                            id: 4,
+                            question: 'How long will it take me to learn nocode?',
+                            answer: 'A Sales Overview SaaS (Software as a Service) platform provides tools and analytics to help businesses track, manage, and optimize their sales processes. It offers real-time insights, reporting, and dashboards to improve sales performance and decision-making.'
+                        },
+                        {
+                            id: 5,
+                            question: 'Can I use my own domain name?',
+                            answer: 'A Sales Overview SaaS (Software as a Service) platform provides tools and analytics to help businesses track, manage, and optimize their sales processes. It offers real-time insights, reporting, and dashboards to improve sales performance and decision-making.'
+                        },
+                    ] }">
+                        <template x-for="(faq, index) in faqData" :key="index">
+                            <div data-aos="fade-up" data-aos-duration="1000" data-aos-offset="20" data-aos-once="true" class="mb-7 bg-cardBg border border-[#fff3] rounded-32px py-7 md:px-7 px-[18px]">
+                                <div @click="openTab === faq.id ? openTab = -1 : openTab = faq.id" class="md:w-full w-[295px] text-left flex md:justify-between md:items-center cursor-pointer transition-colors duration-300 pb-2 md:gap-0 gap-[18px]">
+                                    <h6 x-text="faq.question" class="md:w-full w-[239px] font-normal font-Graphik md:text-5xl text-xl md:leading-14 leading-10 text-primaryColor"></h6>
+                                    <svg class="md:w-14 w-10 md:h-14 h-10 md:mt-0 mt-2 rounded-12px bg-cardBg border border-[#fff3]" x-show="openTab === faq.id" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" >
+                                        <path d="M18 12H6" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="md:w-14 w-10 md:h-14 h-10 md:mt-0 mt-2 rounded-12px bg-cardBg border border-[#fff3]" x-show="openTab !== faq.id" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 18V6M6 12h12" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div x-show="openTab === faq.id" class="lg;w-[914px] w-auto pt-3 transition-all duration-300" x-transition>
+                                    <p class="text-secondaryColor md:text-lg text-base font-Graphik text-left font-normal leading-7" x-html="faq.answer"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="faq.html" class="bg-btn border border-[#fff3] rounded-12px inline-block no-underline text-lg leading-7 font-normal font-inter text-secondaryColor px-6 py-3 ml-5 hover:bg-bghead hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">View all FAQs</a>    
+            </div>
+        </div>
+    </section>
+    <!-- Accordion Area End Here -->
+
+    <!-- Build Area Start Here -->
+    <section class="w-full relative h-800">
+        <div class="container">
+            <div class="absolute inset-0 bg-bgBanner bg-cover bg-center opacity-60"></div>
+            <div class="absolute bg-bgAbstract2 rounded-full w-[559px] md:h-1026 h-700 md:top-0 top-1/2 right-0 blur-[90px] z-10 rotate-180"></div> 
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="flex lg:flex-row flex-col lg:gap-[123px] gap-10 items-center absolute top-0 lg:pt-56 pt-36 header-gradient">
+                <div class=" md:pr-0 pr-[18px] lg:w-617 w-auto md:text-left text-center">
+                    <h2 class="font-Graphik lg:text-7xl text-[47px] lg:leading-[88px] leading-[51px] text-primaryColor font-medium">
+                        Get your project<span class="text-gradient md:inline-block block">started today</span>
+                    </h2>
+                    <p class="font-inter font-normal md:text-lg text-base leading-7 text-secondaryColor pt-6">Try nocode for as long as you like with our free Starter plan. Purchase a paid Site plan to publish, host, and unlock additional features.</p>
+                    <div class="mt-10">
+                        <div class="border-gradient-6 p-2 inline-block hover:scale-105">
+                            <div class="border-gradient-5 p-2">
+                                <div class="border-gradient-4 px-2 py-4">
+                                    <a href="sign-in.html" class="border-gradient-3 bg-bghead px-6 py-2 text-white">
+                                        Start building - it’s free
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:pl-0 pl-[18px] pb-10">
+                    <img class="" src="assets/img/homePage/design-3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Build Area End Here -->
+
+    <!-- Footer Area Start Here -->
+     <section class="lg:mt-72 md:mt-[30rem] mt-60">
+        <div class="container">
+            <div
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-offset="20"
+                data-aos-once="true"
+                class="flex flex-wrap lg:flex-row flex-col justify-between xl:px-0 px-[18px] header-gradient md:pb-24 pb-16">
+                <div class="lg:w-371 w-auto lg:mt-0">
+                    <a href="index.html">
+                        <img src="assets/img/logo.svg" alt="">
+                    </a>
+                    <p class="text-secondaryColor pt-5 font-inter font-normal md:text-lg text-base leading-8">Empower your creative vision and bring it to life effortlessly with our intuitive website builder – no coding skills needed.</p>
+                    <div class="pt-5 flex items-center gap-3">
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <svg class="group bg-bghead rounded-full hover:bg-primaryColor hover:transition-all hover: ease-in-out hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <path d="M21.4758 18.8746L21.8908 16.341H19.2968V14.6969C19.2968 14.0039 19.659 13.3279 20.8209 13.3279H22V11.1711C22 11.1711 20.9301 11 19.9069 11C17.7708 11 16.3746 12.2136 16.3746 14.4103V16.3414H14V18.875H16.3746V25H19.2968V18.875L21.4758 18.8746Z" fill="white"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <svg class="group bg-bghead rounded-full hover:bg-primaryColor hover:transition-all hover: ease-in-out hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <path d="M18.0001 11C16.099 11 15.8606 11.0081 15.114 11.0421C14.3689 11.0761 13.86 11.1945 13.4148 11.3675C12.9544 11.5464 12.5641 11.7857 12.1749 12.1749C11.7857 12.564 11.5464 12.9545 11.3675 13.4148C11.1944 13.86 11.0761 14.3689 11.0421 15.114C11.008 15.8606 11 16.099 11 18.0001C11 19.9012 11.008 20.1396 11.0421 20.8863C11.0761 21.6313 11.1944 22.1402 11.3675 22.5854C11.5464 23.0458 11.7858 23.4361 12.1749 23.8253C12.5641 24.2145 12.9544 24.4539 13.4148 24.6328C13.86 24.8058 14.3689 24.9241 15.114 24.9581C15.8606 24.9922 16.099 25.0002 18.0001 25.0002C19.9012 25.0002 20.1396 24.9922 20.8863 24.9581C21.6313 24.9241 22.1402 24.8058 22.5854 24.6328C23.0458 24.4539 23.4361 24.2145 23.8253 23.8253C24.2145 23.4361 24.4539 23.0458 24.6328 22.5854C24.8058 22.1402 24.9241 21.6313 24.9581 20.8863C24.9922 20.1396 25.0002 19.9012 25.0002 18.0001C25.0002 16.099 24.9922 15.8606 24.9581 15.114C24.9241 14.3689 24.8058 13.86 24.6328 13.4148C24.4539 12.9545 24.2145 12.564 23.8253 12.1749C23.4361 11.7857 23.0458 11.5464 22.5854 11.3675C22.1402 11.1945 21.6313 11.0761 20.8863 11.0421C20.1396 11.0081 19.9012 11 18.0001 11ZM18.0001 12.2613C19.8692 12.2613 20.0906 12.2684 20.8288 12.3021C21.5113 12.3332 21.8819 12.4473 22.1286 12.5431C22.4553 12.6701 22.6885 12.8218 22.9335 13.0667C23.1784 13.3117 23.3301 13.5449 23.4571 13.8716C23.553 14.1183 23.667 14.489 23.6981 15.1715C23.7318 15.9096 23.739 16.131 23.739 18.0001C23.739 19.8692 23.7318 20.0906 23.6981 20.8288C23.667 21.5113 23.553 21.8819 23.4571 22.1286C23.3301 22.4553 23.1784 22.6885 22.9335 22.9335C22.6885 23.1784 22.4553 23.3301 22.1286 23.4571C21.8819 23.553 21.5113 23.667 20.8288 23.6981C20.0907 23.7318 19.8694 23.739 18.0001 23.739C16.1309 23.739 15.9095 23.7318 15.1715 23.6981C14.4889 23.667 14.1183 23.553 13.8717 23.4571C13.5449 23.3301 13.3117 23.1784 13.0668 22.9335C12.8218 22.6885 12.6701 22.4553 12.5431 22.1286C12.4473 21.8819 12.3332 21.5113 12.3021 20.8288C12.2684 20.0906 12.2613 19.8692 12.2613 18.0001C12.2613 16.131 12.2684 15.9096 12.3021 15.1715C12.3332 14.4889 12.4473 14.1183 12.5431 13.8717C12.6701 13.5449 12.8218 13.3117 13.0667 13.0668C13.3117 12.8218 13.5449 12.6701 13.8716 12.5431C14.1183 12.4473 14.489 12.3332 15.1715 12.3021C15.9096 12.2684 16.131 12.2613 18.0001 12.2613" fill="white"/>
+                                <path d="M18.0004 20.3339C16.7117 20.3339 15.667 19.2892 15.667 18.0006C15.667 16.7118 16.7117 15.6672 18.0004 15.6672C19.2891 15.6672 20.3338 16.7118 20.3338 18.0006C20.3338 19.2892 19.2891 20.3339 18.0004 20.3339ZM18.0004 14.4059C16.0151 14.4059 14.4058 16.0152 14.4058 18.0006C14.4058 19.9858 16.0151 21.5952 18.0004 21.5952C19.9857 21.5952 21.5951 19.9858 21.5951 18.0006C21.5951 16.0152 19.9857 14.4059 18.0004 14.4059ZM22.5771 14.2639C22.5771 14.7278 22.201 15.1039 21.7371 15.1039C21.2732 15.1039 20.8971 14.7278 20.8971 14.2639C20.8971 13.7999 21.2732 13.4238 21.7371 13.4238C22.201 13.4238 22.5771 13.7999 22.5771 14.2639Z" fill="white"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="https://twitter.com/" target="_blank">
+                            <svg class="group bg-bghead rounded-full hover:bg-primaryColor hover:transition-all hover: ease-in-out hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <path d="M25 13.4205C24.4758 13.6655 23.9197 13.8263 23.3503 13.8975C23.9434 13.5226 24.3988 12.9289 24.6132 12.2215C24.0494 12.5744 23.4326 12.823 22.7893 12.9567C22.2654 12.3679 21.5189 12 20.6928 12C19.1065 12 17.8204 13.3564 17.8204 15.0293C17.8204 15.2668 17.8458 15.498 17.8948 15.7198C15.5077 15.5934 13.3913 14.3874 11.9746 12.5545C11.7274 13.002 11.5858 13.5224 11.5858 14.0775C11.5858 15.1285 12.0929 16.0557 12.8635 16.599C12.4074 16.584 11.9613 16.454 11.5625 16.2201C11.5624 16.2328 11.5624 16.2454 11.5624 16.2582C11.5624 17.726 12.5524 18.9504 13.8663 19.2287C13.4434 19.35 12.9997 19.3678 12.5693 19.2806C12.9347 20.4841 13.9955 21.3599 15.2523 21.3845C14.2693 22.1969 13.0308 22.6813 11.6852 22.6813C11.4533 22.6813 11.2247 22.6669 11 22.6389C12.2711 23.4985 13.7809 24 15.4029 24C20.6861 24 23.5751 19.3838 23.5751 15.3807C23.5751 15.2493 23.5723 15.1186 23.5668 14.9887C24.1291 14.56 24.6144 14.0289 25 13.4205Z" fill="white"/>
+                            </svg>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/" target="_blank">
+                            <svg class="group bg-bghead rounded-full hover:bg-primaryColor hover:transition-all hover: ease-in-out hover:duration-500" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="#BABABA">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2003 15.8783H18.8001V17.1733C19.1746 16.4285 20.135 15.7593 21.5777 15.7593C24.3434 15.7593 25 17.2419 25 19.9621V25H22.2V20.5816C22.2 19.0325 21.8255 18.1589 20.8721 18.1589C19.5498 18.1589 19.0003 19.1004 19.0003 20.5809V25H16.2003V15.8783ZM11.399 24.881H14.199V15.7593H11.399V24.881ZM14.6001 12.785C14.6002 13.0197 14.5537 13.2521 14.4632 13.4686C14.3727 13.6852 14.2401 13.8816 14.073 14.0464C13.7345 14.3828 13.2763 14.5712 12.799 14.57C12.3226 14.5697 11.8654 14.3818 11.5264 14.0471C11.3599 13.8817 11.2278 13.6851 11.1374 13.4685C11.0471 13.2519 11.0004 13.0197 11 12.785C11 12.3111 11.189 11.8575 11.5271 11.5229C11.8658 11.1877 12.3232 10.9998 12.7997 11C13.2771 11 13.7349 11.1883 14.073 11.5229C14.4104 11.8575 14.6001 12.3111 14.6001 12.785Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-4 grid-cols-2 md:gap-28 gap-10 xl:w-800 w-auto lg:mt-0 mt-16">
+                    <div>
+                        <h5 class="font-inter font-normal text-lg leading-8 text-footer">Features</h5>
+                        <ul class="mt-5">
+                            <li><a href="#"  onclick="event.preventDefault()" class="font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Design</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">CMS</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">SEO</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Forms</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Animations</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Authentication</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-inter font-normal text-lg leading-8 text-footer">Product</h5>
+                        <ul class="mt-5">
+                            <li><a href="#"  onclick="event.preventDefault()" class="font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Overview</a></li>
+                            <li><a href="pricing.html" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Pricing</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Templates</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Gallery</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Release notes</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-inter font-normal text-lg leading-8 text-footer">Company</h5>
+                        <ul class="mt-5">
+                            <li><a href="about.html" class="font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">About us</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Services</a></li>
+                            <li><a href="blog.html" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Blog</a></li>
+                            <li><a href="contact.html" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Contact</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Resources</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="font-inter font-normal text-lg leading-8 text-footer">Learn</h5>
+                        <ul class="mt-5">
+                            <li><a href="#"  onclick="event.preventDefault()" class="font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Documentation</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Video tutorials</a></li>
+                            <li><a href="#"  onclick="event.preventDefault()" class="pt-5 font-inter font-normal text-base leading-7 text-secondaryColor block hover:text-primaryColor hover:transition-all hover:ease-in-out hover:duration-500">Community</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="flex lg:flex-row flex-col justify-between lg:items-center py-14 header-gradient">
+                <div class="md:w-517 w-auto">
+                    <h2 class="font-Graphik font-normal md:text-[48px] text-4.5xl md:leading-18 leading-12 text-primaryColor">Let’s keep in touch</h2>
+                    <p class="pt-4 text-secondaryColor md:text-lg text-base leading-7 font-inter font-normal">Join our monthly email with insights and nocode updates.</p>
+                </div>
+                <div class="lg:w-617 w-full flex lg:flex-row flex-col gap-5 lg:mt-0 mt-10">
+                    <form class="lg:w-[438px] w-full h-14 bg-cardBg border border-[#fff3] rounded-12px">
+                        <input class="lg:w-[438px] w-full text-primaryColor py-4 pl-4 bg-transparent placeholder:text-secondaryColor placeholder:font-normal placeholder:font-inter placeholder:text-left placeholder:text-lg focus:outline-none" type="text" placeholder="Email">
+                        <p class="lg:block hidden text-secondaryColor text-sm leading-5 font-inter pt-2">You can unsubscribe at any time.</p>
+                    </form>
+                    <button class="border-gradient-3 bg-bghead px-8 py-2 text-primaryColor text-lg leading-7">Subscribe</button>
+                    <p class="lg:hidden block text-secondaryColor text-sm leading-5 font-inter pt-2">You can unsubscribe at any time.</p>
+                </div>
+            </div>
+            <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-offset="20"
+            data-aos-once="true"
+            class="my-10 xl:px-0 px-4">
+                <div class="flex md:flex-row flex-col-reverse justify-between rounded-24">
+                    <div class="md:mt-0 mt-7">
+                        <p class="font-inter font-normal md:text-lg text-base leading-7 text-secondaryColor text-center">&copy; 2023 nocode. All Rights Reserved.</p>
+                    </div>
+                    <div class="flex md:justify-end justify-center gap-5 mt-0">
+                        <a href="#" onclick="event.preventDefault()" class="text-secondaryColor font-inter font-normal text-base leading-8">Terms & Conditions</a>
+                        <a href="#" onclick="event.preventDefault()" class="text-secondaryColor font-inter font-normal text-base leading-8">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Footer Area End Here -->
+
+
+    <!-- Alpine JS Script -->
+    <script src="assets/js/alpine.min.js" defer></script>
+
+    <!-- AOS Animation Script -->
+    <script src="assets/js/aos.js"></script>
+    <script src="assets/js/aos_script.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/scricpt.js"></script>
+</body>
+</html>
